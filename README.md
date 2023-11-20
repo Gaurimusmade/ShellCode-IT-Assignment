@@ -34,12 +34,12 @@ Server :
 
 5. **Setup .env file** according to your local settings.
 
-```
-PORT = 5001 // choose the port for server to run
-host = "localhost"
-user ='root' //your username
-password = '' //password of your database
-database = 'test' //the db_name
+   ```
+    PORT = 5001 // choose the port for server to run
+    host = "localhost"
+    user ='root' //your username
+    password = '' //password of your database
+    database = 'test' //the db_name
 
    ```
 
