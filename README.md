@@ -7,6 +7,7 @@
 - MySQL installed and running
 
 ## Installation
+Server : 
 
 1. Clone the repository:
 
@@ -17,7 +18,7 @@
 2. Change into the project directory:
 
     ```bash
-    cd backend
+    cd Backend
     ```
 
 3. Install dependencies:
@@ -37,9 +38,22 @@
     npm start
     ```
 
-6. Start the React app:
+ React app:
+
+1. Change into the project directory:
 
     ```bash
+    cd Frontend
+    ```
+
+2. Install dependencies:
+
+    ```bash
+    npm install
+    ```
+3. Start the React app:
+
+     ```bash
     npm run dev
     ```
 
