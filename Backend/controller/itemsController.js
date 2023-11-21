@@ -71,7 +71,7 @@ const getitems = async(req, res) => {
 //     }
 // }
 
-const postitems = (req, res) => {
+const postitems = async (req, res) => {
     console.log("Helo")
     const { key1, key2, key3, key4, key5 } = req.body;
     console.log(req.body);
@@ -99,7 +99,7 @@ const deleteitems = async (req, res) => {
     //return res.status(200).json(result[0]);
 }
 
-const deleteall=(req,res)=>{
+const deleteall=async (req,res)=>{
     var sql="DELETE FROM cart;";
    const result = await client.query(sql);
         
