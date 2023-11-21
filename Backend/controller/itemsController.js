@@ -40,39 +40,39 @@ const {Sequelize}= require('sequelize');
 
     // client.connect();
 
-   async function insert() {
-        try {
-          await client.query(`INSERT INTO cart ("Color","Price","Quantity","img","Name") VALUES ('black', 230,12,'https://m.media-amazon.com/images/I/6175SlKKECL._SX679_.jpg','One plus')`)
+   // async function insert() {
+   //      try {
+   //        await client.query(`INSERT INTO cart ("Color","Price","Quantity","img","Name") VALUES ('black', 230,12,'https://m.media-amazon.com/images/I/6175SlKKECL._SX679_.jpg','One plus')`)
             
-            console.log("Inserted");
-        } catch (err) {
-            console.log(err);
-        }
-    }
+   //          console.log("Inserted");
+   //      } catch (err) {
+   //          console.log(err);
+   //      }
+   //  }
     
-    // Call the asynchronous function
-    insert();
+   //  // Call the asynchronous function
+   //  insert();
    
-const getitems = (req, res) => {
-    console.log("Hello");
-    const mysql = 'SELECT * FROM cart';
-    client.query(mysql, (err, data) => {
-        if (err) return res.json(err);
-        console.log(data.rows);
-        return res.status(200).json(data.rows); 
-    }) 
-};
-// const getitems = async (req, res) => {
-//     try{
-//         console.log("hello")
-//         let query = `SELECT * FROM cart`
-//         let {rows} = await client.query(query);
-//         console.log(rows);
-//         return res.status(200).json(rows);
-//     }catch(err){
-//         return res.json(err);
-//     }
-// }
+// const getitems = (req, res) => {
+//     console.log("Hello");
+//     const mysql = `SELECT * FROM cart`;
+//     client.query(mysql, (err, data) => {
+//         if (err) return res.json(err);
+//         console.log(data.rows);
+//         return res.status(200).json(data.rows); 
+//     }) 
+// };
+const getitems = async (req, res) => {
+    try{
+        console.log("hello")
+        let query = `SELECT * FROM cart`
+        let {rows} = await client.query(query);
+        console.log(rows);
+        return res.status(200).json(rows);
+    }catch(err){
+        return res.json(err);
+    }
+}
 
 const postitems = (req, res) => {
     console.log("Helo")
