@@ -52,13 +52,13 @@ const {Sequelize}= require('sequelize');
 
 
    
-const getitems = (req, res) => {
-    console.log("Hello");
+const getitems = async(req, res) => {
+    console.log("Hello123");
     const mysql = 'SELECT * FROM cart';
-    client.query(mysql, (err, data) => {
+   await client.query(mysql, (err, data) => {
         if (err) return res.json(err);
-        console.log(data.rows);
-        return res.status(200).json(data.rows); 
+        console.log(data[0]);
+        return res.status(200).json(data[0]); 
     }) 
 };
 // const getitems = async (req, res) => {
