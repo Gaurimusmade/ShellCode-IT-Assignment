@@ -55,8 +55,8 @@ const {Sequelize}= require('sequelize');
    
 const getitems = async(req, res) => {
     console.log("Hello world");
-    const mysql = `SELECT * FROM cart`;
-    const result = await client.query(mysql);
+    const sql = `SELECT * FROM cart`;
+    const result = await client.query(sql);
     return res.status(200).json(result[0]);
 };
 // const getitems = async (req, res) => {
@@ -77,11 +77,14 @@ const postitems = (req, res) => {
     console.log(req.body);
     var sql = `INSERT INTO cart ("Color","Price","Quantity","img","Name") VALUES ('${key2}', ${key3},${key4},'${key5}','${key1}')`;
     console.log(sql);
-    client.query(sql, function (err, result) {
-        if (err) throw err;
-        console.log("1 record inserted");
-        return res.status(200).json(result);
-    });
+   const result = await client.query(sql);
+   console.log("1 record inserted");
+    return res.status(200).json(result);
+    // client.query(sql, function (err, result) {
+    //     if (err) throw err;
+    //     console.log("1 record inserted");
+    //     return res.status(200).json(result);
+    // });
 }
 
 const deleteitems = async (req, res) => {
@@ -98,10 +101,11 @@ const deleteitems = async (req, res) => {
 
 const deleteall=(req,res)=>{
     var sql="DELETE FROM cart;";
-    
-    client.query(sql,function(err,result){
-        if (err) throw err;
+   const result = await client.query(sql);
+        
+    // client.query(sql,function(err,result){
+    //     if (err) throw err;
         console.log("all records deleted");
-    })
+    // })
 }
 module.exports = { getitems, postitems, deleteitems,deleteall };
