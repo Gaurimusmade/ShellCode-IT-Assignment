@@ -53,26 +53,26 @@ const {Sequelize}= require('sequelize');
    //  // Call the asynchronous function
    //  insert();
    
-// const getitems = (req, res) => {
-//     console.log("Hello");
-//     const mysql = `SELECT * FROM cart`;
-//     client.query(mysql, (err, data) => {
-//         if (err) return res.json(err);
-//         console.log(data.rows);
-//         return res.status(200).json(data.rows); 
-//     }) 
-// };
-const getitems = async (req, res) => {
-    try{
-        console.log("hello")
-        let query = `SELECT * FROM cart`
-        let {rows} = await client.query(query);
-        console.log(rows);
-        return res.status(200).json(rows);
-    }catch(err){
-        return res.json(err);
-    }
-}
+const getitems = (req, res) => {
+    console.log("Hello world");
+    const mysql = `SELECT * FROM cart`;
+    client.query(mysql, (err, data) => {
+        if (err) return res.json(err);
+        console.log(data);
+        return res.status(200).json(data.rows); 
+    }) 
+};
+// const getitems = async (req, res) => {
+//     try{
+//         console.log("hello")
+//         let query = `SELECT * FROM cart`
+//         let {rows} = await client.query(query);
+//         console.log(rows);
+//         return res.status(200).json(rows);
+//     }catch(err){
+//         return res.json(err);
+//     }
+// }
 
 const postitems = (req, res) => {
     console.log("Helo")
