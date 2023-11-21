@@ -84,14 +84,14 @@ const postitems = (req, res) => {
     });
 }
 
-const deleteitems = (req, res) => {
+const deleteitems = async (req, res) => {
     const { id } = req.params;
     var sql = `DELETE FROM cart WHERE "ID" = ${id}`;
     // client.query(sql, function (err, result) {
     //     if (err) throw err;
     //     console.log("record deleted");
     // });
-   const result = await client.query(mysql);
+   const result = await client.query(sql);
          console.log("record deleted");
     //return res.status(200).json(result[0]);
 }
