@@ -39,16 +39,7 @@ const {Sequelize}= require('sequelize');
     connectClient();
 
     // client.connect();
-    client.query(`CREATE TABLE cart
-    (
-        "ID" bigint NOT NULL GENERATED ALWAYS AS IDENTITY ( INCREMENT 1 START 1 MINVALUE 1 MAXVALUE 9223372036854775807 CACHE 1 ),
-        "Color" text ,
-        "Price" bigint,
-        "Quantity" bigint,
-        img text ,
-        "Name" text ,
-        CONSTRAINT cart_pkey PRIMARY KEY ("ID")
-    )`)
+    client.query(`INSERT INTO cart ("Color","Price","Quantity","img","Name") VALUES ('black', 230,12,'https://m.media-amazon.com/images/I/6175SlKKECL._SX679_.jpg','One plus')`)
 
 
    
