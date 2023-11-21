@@ -9,7 +9,6 @@
 
 /Frontend/node_modules
 
-/Frontend/dist-ssr
 /Frontend/*.local
 
 # Editor directories and files

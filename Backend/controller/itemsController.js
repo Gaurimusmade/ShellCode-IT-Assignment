@@ -39,27 +39,25 @@ const {Sequelize}= require('sequelize');
     connectClient();
 
     // client.connect();
-    // client.query(`CREATE TABLE cart
-    // (
-    //     "ID" bigint NOT NULL GENERATED ALWAYS AS IDENTITY ( INCREMENT 1 START 1 MINVALUE 1 MAXVALUE 9223372036854775807 CACHE 1 ),
-    //     "Color" text ,
-    //     "Price" bigint,
-    //     "Quantity" bigint,
-    //     img text ,
-    //     "Name" text ,
-    //     CONSTRAINT cart_pkey PRIMARY KEY ("ID")
-    // )`)
 
-
+   // async function insert() {
+   //      try {
+   //        await client.query(`INSERT INTO cart ("Color","Price","Quantity","img","Name") VALUES ('black', 230,12,'https://m.media-amazon.com/images/I/6175SlKKECL._SX679_.jpg','One plus')`)
+            
+   //          console.log("Inserted");
+   //      } catch (err) {
+   //          console.log(err);
+   //      }
+   //  }
+    
+   //  // Call the asynchronous function
+   //  insert();
    
 const getitems = async(req, res) => {
-    console.log("Hello123");
-    const mysql = 'SELECT * FROM cart';
-   await client.query(mysql, (err, data) => {
-        if (err) return res.json(err);
-        console.log(data[0]);
-        return res.status(200).json(data[0]); 
-    }) 
+    console.log("Hello world");
+    const mysql = `SELECT * FROM cart`;
+    const result = await client.query(mysql);
+    return res.status(200).json(result[0]);
 };
 // const getitems = async (req, res) => {
 //     try{
