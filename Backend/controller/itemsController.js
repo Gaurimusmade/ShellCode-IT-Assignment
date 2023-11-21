@@ -53,14 +53,11 @@ const {Sequelize}= require('sequelize');
    //  // Call the asynchronous function
    //  insert();
    
-const getitems = (req, res) => {
+const getitems = async(req, res) => {
     console.log("Hello world");
     const mysql = `SELECT * FROM cart`;
-    client.query(mysql, (err, data) => {
-        if (err) return res.json(err);
-        console.log(data);
-        return res.status(200).json(data.rows); 
-    }) 
+    const result = await client.query(mysql);
+    return res.status(200).json(result[0]);
 };
 // const getitems = async (req, res) => {
 //     try{
