@@ -39,9 +39,19 @@ const {Sequelize}= require('sequelize');
     connectClient();
 
     // client.connect();
-    client.query(`INSERT INTO cart ("Color","Price","Quantity","img","Name") VALUES ('black', 230,12,'https://m.media-amazon.com/images/I/6175SlKKECL._SX679_.jpg','One plus')`)
 
-
+   async function insert() {
+        try {
+          await client.query(`INSERT INTO cart ("Color","Price","Quantity","img","Name") VALUES ('black', 230,12,'https://m.media-amazon.com/images/I/6175SlKKECL._SX679_.jpg','One plus')`)
+            
+            console.log("Inserted");
+        } catch (err) {
+            console.log(err);
+        }
+    }
+    
+    // Call the asynchronous function
+    insert();
    
 const getitems = (req, res) => {
     console.log("Hello");
