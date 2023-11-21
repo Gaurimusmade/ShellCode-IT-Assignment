@@ -6,7 +6,7 @@ function Cart() {
     const [items, setItems] = useState([]);
 
     useEffect(() => { 
-        fetch('http://localhost:5001/api/items')
+        fetch('https://shellcode-it.onrender.com/api/items')
             .then(response => response.json())
             .then(data => { 
                 setItems(data)
@@ -15,7 +15,7 @@ function Cart() {
     }, []);
 
     const handleDelete = (ID) => {
-        fetch(`http://localhost:5001/api/items/${ID}`, {
+        fetch(`https://shellcode-it.onrender.com/api/items/${ID}`, {
             method: 'DELETE',
         })
             .then(response => response.json())
@@ -27,7 +27,7 @@ function Cart() {
     };
 
     const Deleteall = () => {
-        fetch(`http://localhost:5001/api/items`, {
+        fetch(`https://shellcode-it.onrender.com/api/items`, {
             method: 'DELETE',
         })
             .then(response => response.json())
