@@ -87,10 +87,13 @@ const postitems = (req, res) => {
 const deleteitems = (req, res) => {
     const { id } = req.params;
     var sql = `DELETE FROM cart WHERE "ID" = ${id}`;
-    client.query(sql, function (err, result) {
-        if (err) throw err;
-        console.log("record deleted");
-    });
+    // client.query(sql, function (err, result) {
+    //     if (err) throw err;
+    //     console.log("record deleted");
+    // });
+   const result = await client.query(mysql);
+         console.log("record deleted");
+    //return res.status(200).json(result[0]);
 }
 
 const deleteall=(req,res)=>{
