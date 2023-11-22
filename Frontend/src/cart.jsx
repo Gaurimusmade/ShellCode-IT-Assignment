@@ -32,7 +32,6 @@ function Cart() {
         })
             .then(response => response.json())
             .then(() => {
-                console.log(setItems([]));
                 setItems([]);
             })
             .catch(error => console.error('Error deleting item:', error));
