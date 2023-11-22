@@ -12,7 +12,7 @@ function Cart() {
                 console.log(data)
                 setItems(data)
             });
-    }, []);
+    });
 
     const handleDelete = (ID) => {
         fetch(`https://shellcode-it.onrender.com/api/items/${ID}`, {
