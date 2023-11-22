@@ -9,7 +9,7 @@ function Cart() {
             console.log(data)
             setItems(data)
         });
-      }, []);
+      });
         
      
    
