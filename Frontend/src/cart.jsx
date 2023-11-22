@@ -9,8 +9,8 @@ function Cart() {
         fetch('https://shellcode-it.onrender.com/api/items')
             .then(response => response.json())
             .then(data => { 
+                console.log(data)
                 setItems(data)
-                console.log(data.rows)
             });
     }, []);
 
