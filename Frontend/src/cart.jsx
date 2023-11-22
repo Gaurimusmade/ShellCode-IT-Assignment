@@ -23,7 +23,7 @@ function Cart() {
                 setItems(prevItems => prevItems.filter(item => item.ID !== ID));
             })
             .catch(error => console.error('Error deleting item:', error));
-        //window.location.reload(true);
+        
     };
 
     const Deleteall = () => {
@@ -35,7 +35,7 @@ function Cart() {
                 setItems([]);
             })
             .catch(error => console.error('Error deleting item:', error));
-        //window.location.reload(true);
+        
     };
     return (
  

@@ -11,13 +11,12 @@ export default function Item(props) {
 
     const handleClick = async () => {
         try {
-            const response = await fetch('https://shellcode-it.onrender.com/api/items', {
+            const response = await fetch('http://localhost:5001/api/items', {
                 method: 'POST',
                 headers: { 
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify(staticData),
-                console.log(staticData);
             });
 
         } catch (error) {
