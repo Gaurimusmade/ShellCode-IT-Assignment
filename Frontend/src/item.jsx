@@ -17,6 +17,7 @@ export default function Item(props) {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify(staticData),
+                console.log(staticData);
             });
 
         } catch (error) {
