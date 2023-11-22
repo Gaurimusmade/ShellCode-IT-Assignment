@@ -1,16 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import './App.css'
-function Cart() {    
+function Cart() {  
+    useEffect(() => {
+        fetch('https://shellcode-it.onrender.com/api/items')
+        .then(response => response.json())
+        .then(data => { 
+            console.log(data)
+            setItems(data)
+        });
+      }, []);
+        
+     
     const [items, setItems] = useState([]);
-
-    (async () => { 
-        await fetch('https://shellcode-it.onrender.com/api/items')
-            .then(response => response.json())
-            .then(data => { 
-                console.log(data)
-                setItems(data)
-            });
-    })();
+    
+    
 
     const handleDelete = (ID) => {
         fetch(`https://shellcode-it.onrender.com/api/items/${ID}`, {
