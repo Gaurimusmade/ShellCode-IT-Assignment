@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './App.css'
 function Cart() {  
+     const [items, setItems] = useState([]);
     useEffect(() => {
         fetch('https://shellcode-it.onrender.com/api/items')
         .then(response => response.json())
@@ -11,7 +12,7 @@ function Cart() {
       }, []);
         
      
-    const [items, setItems] = useState([]);
+   
     
     
 
