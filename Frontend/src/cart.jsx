@@ -5,8 +5,8 @@ function Cart() {
     const navigate = useNavigate();
     const [items, setItems] = useState([]);
 
-    useEffect(async() => { 
-       await fetch('https://shellcode-it.onrender.com/api/items')
+    useEffect(() => { 
+       fetch('https://shellcode-it.onrender.com/api/items')
             .then(response => response.json())
             .then(data => { 
                 console.log(data)
